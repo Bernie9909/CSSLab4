@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title All Animals
+  body
+    h1 All Animals
+    table
+      tr
+        th Name
+        th Species
+        th Age
+        th Edit
+      each animal in animals
+        tr
+          td= animal.name
+          td= animal.species
+          td= animal.age
+          td
+            a(href='/edit-animal/#{animal.id}') Edit
