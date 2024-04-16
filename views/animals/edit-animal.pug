@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title Edit Animal
+  body
+    h1 Edit Animal
+    form(action="/edit-animal/#{animal.id}" method="post")
+      label(for="homeZoo") Home Zoo:
+      input(type="text" id="homeZoo" name="homeZoo" value="#{animal.homeZoo}" required)
+      br
+      
+      label(for="scientificName") Scientific Name:
+      input(type="text" id="scientificName" name="scientificName" value="#{animal.scientificName}" required)
+      br
+      
+      label(for="commonName") Common Name:
+      input(type="text" id="commonName" name="commonName" value="#{animal.commonName}" required)
+      br
+      
+      label(for="givenName") Given Name:
+      input(type="text" id="givenName" name="givenName" value="#{animal.givenName}" required)
+      br
+      
+      label Gender:
+      input(type="radio" id="male" name="gender" value="male" #{animal.gender === 'male' ? 'checked' : ''})
+      label(for="male") Male
+      input(type="radio" id="female" name="gender" value="female" #{animal.gender === 'female' ? 'checked' : ''})
+      label(for="female") Female
+      br
+      
+      label(for="dob") Date of Birth:
+      input(type="date" id="dob" name="dob" value="#{animal.dob}" required)
+      br
+      
+      label(for="age") Age:
+      input(type="number" id="age" name="age" value="#{animal.age}" required)
+      br
+      
+      label Is Transportable:
+      input(type="radio" id="available" name="transportable" value="available" #{animal.transportable === 'available' ? 'checked' : ''})
+      label(for="available") Available
+      input(type="radio" id="unavailable" name="transportable" value="unavailable" #{animal.transportable === 'unavailable' ? 'checked' : ''})
+      label(for="unavailable") Unavailable
+      br
+      
+      input(type="submit" value="Update Animal Record")
+    form(action="/delete-animal/#{animal.id}" method="post")
+      input(type="submit" value="Delete Animal")
