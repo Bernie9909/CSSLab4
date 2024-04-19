@@ -1,3 +1,8 @@
+// Austin Pyzer, Bernie Warren 
+// 04-19-24
+// Lab 4 - An animal database access page 
+// utilizing mongo, node modules, and pug templates.
+
 const express = require('express');
 const pug = require('pug');
 const user = require('./routes/user.route');
